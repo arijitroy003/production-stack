@@ -2,6 +2,30 @@ apiVersion: v1
 entries:
   vllm-stack:
   - apiVersion: v2
+    created: "2026-11-17T00:08:43.959005866Z"
+    dependencies:
+    - condition: kube-prometheus-stack.enabled
+      name: kube-prometheus-stack
+      repository: oci://ghcr.io/prometheus-community/charts
+      version: 82.4.3
+    - condition: prometheus-adapter.enabled
+      name: prometheus-adapter
+      repository: oci://ghcr.io/prometheus-community/charts
+      version: 5.3.0
+    - condition: k8s-aibom.enabled
+      name: k8s-aibom
+      repository: oci://ghcr.io/googlecloudplatform/charts
+      version: 1.5.1
+    description: The stack deployment of vLLM
+    digest: 57fffa938868f3db751e49b5615cf89c1869f2d101cf165443eb8ac04e07c3f4
+    maintainers:
+    - name: apostac
+    name: vllm-stack
+    type: application
+    urls:
+    - vllm-stack-0.1.15.tgz
+    version: 0.1.15
+  - apiVersion: v2
     created: "2026-11-13T05:42:37.427673309Z"
     dependencies:
     - condition: kube-prometheus-stack.enabled
@@ -276,4 +300,4 @@ entries:
     urls:
     - vllm-stack-0.0.2.tgz
     version: 0.0.2
-generated: "2026-11-13T05:42:37.427835023Z"
+generated: "2026-11-17T00:08:43.959150704Z"
